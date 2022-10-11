@@ -1,0 +1,200 @@
+\begin{frame}{Ví dụ}
+    \begin{align}
+        \dot{x}&=Ax\left(t\right)+Bu\left(t\right), \\
+        A&=\left[\begin{array}{cc}
+        0 & 1\\
+        1 & 0
+        \end{array}\right],\\
+        B &=\left[\begin{array}{c}
+        1\\
+        0
+        \end{array}\right],\\
+        \left[\begin{array}{ccc}
+        0 & 1 & 1\\
+        1 & 0 & 0
+        \end{array}\right]&\leadsto\left[\begin{array}{ccc}
+        \delta_{1} & \delta_{1}+1 & \delta_{2}+1\\
+        \delta_{1}+1 & \delta_{1} & \delta_{2}
+        \end{array}\right].
+    \end{align}
+\end{frame}
+
+\begin{frame}{Ví dụ}
+    \begin{align}
+        \left[A,B\right]&\leadsto\left[A,B\right]+D\Delta E, \\
+        D&=\left[\begin{array}{c}
+        1\\
+        1
+        \end{array}\right],\\
+        E&=\left[\begin{array}{ccc}
+        1 & 1 & 0\\
+        0 & 0 & 1
+        \end{array}\right].
+    \end{align}
+\end{frame}
+
+
+\begin{frame}{Ví dụ}
+    \begin{align}
+        \left(E\left[A-\lambda I,B\right]^{-1}D\right)\left(v\right)
+        &= E\left[A-\lambda I,B\right]^{-1}\left[\begin{array}{c}
+1\\ 1\end{array}\right]v \nonumber\\
+        &= E\left[A-\lambda I,B\right]^{-1}\left[\begin{array}{c}
+v\\
+v\end{array}\right]
+    \end{align}
+\end{frame}
+
+\begin{frame}{Ví dụ}
+    \begin{align}
+        \left[A-\lambda I,B\right]^{-1}\left[\begin{array}{c}
+        v\\
+        v
+        \end{array}\right]&=\left\{ \left[\begin{array}{c}
+        p\\
+        q\\
+        r
+        \end{array}\right]\colon\left[A-\lambda I,B\right]\left[\begin{array}{c}
+        p\\
+        q\\
+        r
+        \end{array}\right]=\left[\begin{array}{c}
+        v\\
+        v
+        \end{array}\right],\,\forall p,q,r\in\C\right\} \nonumber\\
+        %%% 
+        &=\left\{ \left[\begin{array}{c}
+        p\\
+        q\\
+        r
+        \end{array}\right]\colon\left[\begin{array}{c}
+        q+r-\lambda p\\
+        q-p\lambda
+        \end{array}\right]=\left[\begin{array}{c}
+        v\\
+        v
+        \end{array}\right],\,\forall p,q,r\in\C\right\} .
+    \end{align}
+\end{frame}
+
+\begin{frame}{Ví dụ}
+    \begin{align}
+        \left(E\left[A-\lambda I,B\right]^{-1}D\right)\left(v\right)&=\left\{ E\left[\begin{array}{c}
+        p\\
+        q\\
+        r
+        \end{array}\right]\colon\left[\begin{array}{c}
+        q+r-\lambda p\\
+        q-p\lambda
+        \end{array}\right]=\left[\begin{array}{c}
+        v\\
+        v
+        \end{array}\right],\,\forall p,q,r\in\C\right\} \nonumber\\
+        %%
+        &=\left\{ \left[\begin{array}{c}
+        p+q\\
+        r
+        \end{array}\right]\colon\left[\begin{array}{c}
+        q+r-\lambda p\\
+        q-p\lambda
+        \end{array}\right]=\left[\begin{array}{c}
+        v\\
+        v
+        \end{array}\right],\,\forall p,q,r\in\C\right\} \nonumber\\
+        %%
+        &=\left\{ \left[\begin{array}{c}
+        q+v+q\lambda\\
+        v-q+\lambda\left(v+q\lambda\right)
+        \end{array}\right]:q\in\C\right\} .
+    \end{align}
+\end{frame}
+
+\begin{frame}{Ví dụ}
+    \begin{align}
+        ax_{1}+x_{2}&=b\\
+        x_{1}&=q+v+q\lambda,\\
+        x_{2}&=v-q+\lambda\left(v+q\lambda\right).
+    \end{align}
+    \begin{itemize}
+        \item \(q = q_{0}\), \(q = q_{1}\) \(\implies\) \(a = 1 - \lambda\), \(b = 2v.\)
+    \end{itemize}
+    \begin{align}
+        \left(1-\lambda\right)x_{1}+x_{2}&=2v,\\    
+        x_{1}&=q+v+q\lambda,\\
+        x_{2}&=v-q+\lambda\left(v+q\lambda\right).
+    \end{align}
+\end{frame}
+
+\begin{frame}{Ví dụ}
+\begin{itemize}
+    \item \(\lambda = -1\)
+        \begin{align}
+            x_1 &= v,\\
+            x_2 &= 0,\\
+            d\left(0,\left(E\left[A-\lambda I,B\right]^{-1}D\right)\left(v\right)\right)&=\abs{v}.
+        \end{align}
+    \item \(\lambda\ne-1\),  \(\left(\C,\norm{\cdot}_{\infty}\right)\)
+        \begin{align}
+            2\abs v&=\abs{\left(1-\lambda\right)x_{1}+x_{2}} \nonumber\\
+            &\le\abs{\left(1-\lambda\right)x_{1}}+\abs{x_{2}}\nonumber\\
+            &\le\left(\left|1-\lambda\right|+1\right)\max\left\{ \left|x_{1}\right|,\left|x_{2}\right|\right\} \nonumber\\
+            &=\left(\left|1-\lambda\right|+1\right)\norm{\left[\begin{array}{c}
+                x_{1}\\
+                x_{2}
+            \end{array}\right]}_{\infty}
+        \end{align}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Ví dụ}
+\begin{itemize}
+    \item \(\lambda\ne-1\),  \(\left(\C,\norm{\cdot}_{\infty}\right)\)
+        \begin{align}
+        \frac{2\left|v\right|}{\left|\lambda-1\right|+1}&\le\norm{\left[\begin{array}{c}
+        x_{1}\\
+        x_{2}
+        \end{array}\right]}_{\infty}.
+        \end{align}
+    \item Dấu bằng:
+    \begin{align}
+        x_{1}&=e^{i\varphi}x_{2},\\
+        x_{2}&=\frac{2v}{1+\left|\lambda-1\right|}\\
+        -\left(\lambda-1\right)e^{i\varphi}&=\left|\lambda-1\right|
+    \end{align}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Ví dụ}
+    \begin{align}
+        \norm{E\left[A-\lambda I,B\right]^{-1}D}&=\sup_{\left|v\right|=1}d\left(0,E\left[A-\lambda I,B\right]^{-1}D\left(v\right)\right) \nonumber\\
+        %%
+        &=\begin{cases}
+        \sup_{\left|v\right|=1}\left\{ \inf\norm{\left[\begin{array}{c}
+        x_{1}\\
+        x_{2}
+        \end{array}\right]}_{\infty}\right\}  & \lambda\ne-1,\\
+        \sup_{\left|v\right|=1}\left\{ \inf\left|v\right|\right\}  & \lambda=-1,
+        \end{cases} \nonumber\\
+        %%
+        &=\begin{cases}
+        \sup_{\left|v\right|=1}\left\{ \frac{2\left|v\right|}{\left|\lambda-1\right|+1}\right\}  & \lambda\ne-1,\\
+        \sup_{\left|v\right|=1}\left\{ \left|v\right|\right\}  & \lambda=-1,
+        \end{cases} \nonumber\\
+        %%
+        &=\begin{cases}
+        \frac{2}{\left|\lambda-1\right|+1}, & \lambda\ne-1,\\
+        1 & \lambda=-1.
+        \end{cases}
+    \end{align}
+\end{frame}
+
+
+\begin{frame}{Ví dụ}
+    \begin{align}
+        \sup_{\lambda\in\C}\norm{E\left[A-\lambda I,B\right]^{-1}D}&=2,\\
+        r_{\C}^{D,E}\left(A,B\right)&=\frac{1}{2}.
+    \end{align}
+\end{frame}
+
+
+

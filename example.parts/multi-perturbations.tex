@@ -1,0 +1,227 @@
+% \begin{frame}{Slide nháp}
+% Nội dung cần nói
+% \begin{itemize}
+%     \item Dẫn dắt tại sao lại cần đa nhiễu (không có trong slide)
+%     \item Định nghĩa đa nhiễu
+%     \item Định nghĩa của bán kính điều khiển
+%     \item Đưa ra các theorem về công thức tính bán kính điều khiển
+% \end{itemize}
+% {\large Ưu tiên đưa các theorem về công thức trước, sau đó đưa các định nghĩa và công thức liên quan vào, vì các bổ đề có thể chỉ dùng để chứng minh chứ không cần thiết cho nội dung định lý}
+% \end{frame}
+\subsection{Bán kính điều khiển dưới đa nhiễu}
+
+\begin{frame}{Định nghĩa}
+    \begin{itemize}
+        \item Hệ chịu đa nhiễu
+        \begin{align}
+            \left[A,B\right]\leadsto\left[\tilde{A},\tilde{B}\right]=\left[A,B\right]+\sum_{i=1}^{N}D_{i}\Delta_{i}E_{i}.
+        \end{align}
+        \item Nhiễu
+        \begin{align}
+            \Delta &=\left(\Delta_{1},\ldots,\Delta_{N}\right)\in\Pi_{i=1}^{N}\C^{l_{i}\times q_{i}}\\
+            \norm{\Delta} &=\sum_{i=1}^{N}\norm{\Delta_{i}}
+        \end{align}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Định nghĩa}
+    \begin{itemize}
+        \item Bán kính điều khiển
+        \begin{align}
+            r_{\C}^{\MP}\left(A,B\right)=\inf\left\{ \norm{\Delta}\colon\Delta=\left(\Delta_{i}\right)_{i\in\underline{N}},\left[A,B\right]+\sum_{i=1}^{N}D_{i}\Delta_{i}E_{i}\text{ không điều khiển được}\right\} .
+        \end{align}
+    \end{itemize}
+\end{frame}
+
+% \begin{frame}{Bổ đề}
+%     Giả sử $U$ là không gian con của $\C^{k}$ và $0\ne\hat{v}_{0}^{*}\notin U^{\perp}$.
+% Khi đó, tồn tại một $0\ne v_{0}^{*}\in\hat{v}_{0}^{*}+U^{\perp}$,
+% $0\ne x_{0}\in U$ sao cho
+% \[
+% \abs{v_{0}^{*}x_{0}}=\norm{v_{0}^{*}}\norm{x_{0}}.
+% \]
+% \end{frame}
+
+\begin{frame}{Định lý}
+    \begin{itemize}
+        \item Ký hiệu
+        \begin{equation}
+            P\preceq Q\iff\norm{Px}\le\norm{Qx},\quad\forall x\in\C^{m}
+        \end{equation}
+        \item \(H\in\C^{k\times\left(n+m\right)}\), $E_{i}\preceq H\, \forall i\in\underline{N}$
+        \begin{equation}
+            \left[\max_{i\in\underline{N}}\sup_{\lambda\in \C}\norm{HW_{\lambda}^{-1}D_{i}}\right]^{-1}\le r_{\C}^{\MP}\left(A,B\right)\le\left[\max_{i\in\underline{N}}\sup_{\lambda\in \C}\norm{E_{i}W_{\lambda}^{-1}D_{i}}\right]^{-1}.
+        \end{equation}
+        \item $E_{i}=\alpha_{i}E_{1}$, $\alpha_{i}\in\C \,\forall i\in\underline{N}$,
+        \begin{equation}
+            r_{\C}^{\MP}\left(A,B\right)=\left[\max_{i\in\underline{N}}\sup_{\lambda\in \C}\norm{E_{i}W_{\lambda}^{-1}D_{i}}\right]^{-1}.
+        \end{equation}
+    \end{itemize}
+\end{frame}
+
+
+\subsection{Ví dụ}
+\begin{frame}{Ví dụ 2}
+    \begin{align}
+        \dot{x}= & Ax\left(t\right)+Bu\left(t\right),\\
+        A= & \left[\begin{array}{cc}
+        0 & 1\\
+        -2 & 0
+        \end{array}\right],\\
+        B= & \left[\begin{array}{c}
+        0\\
+        1
+        \end{array}\right],\\
+        \left[\begin{array}{ccc}
+        0 & 1 & 0\\
+        -2 & 0 & 1
+        \end{array}\right]\leadsto & \left[\begin{array}{ccc}
+        \delta_{1} & 1+\delta_{2} & 0\\
+        -2+\delta_{3} & 0 & 1+\delta_{4}
+        \end{array}\right].
+    \end{align}
+\end{frame}
+
+\begin{frame}{Ví dụ 2}
+    \begin{align}
+        D_{1} & =\left[\begin{array}{cc}
+        1 & 0\\
+        0 & 0
+        \end{array}\right],D_{2}=\left[\begin{array}{cc}
+        0 & 0\\
+        0 & 1
+        \end{array}\right],\\
+        E_{1} & =\left[\begin{array}{ccc}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & 0
+        \end{array}\right],E_{2}=\left[\begin{array}{ccc}
+        1 & 0 & 0\\
+        0 & 0 & 0\\
+        0 & 0 & 1
+        \end{array}\right],\\
+        H & =\left[\begin{array}{ccc}
+        1 & 0 & 0\\
+        0 & 1 & 0\\
+        0 & 0 & 1
+        \end{array}\right].
+    \end{align}
+\end{frame}
+
+
+\begin{frame}{Ví dụ 2}
+    \begin{align}
+        E_{1}\left[A-\lambda I,B\right]^{-1}D_{1}\left[\begin{array}{c}
+        x\\
+        y
+        \end{array}\right] & =E_{1}\left[A-\lambda I,B\right]^{-1}\left[\begin{array}{c}
+        x\\
+        0
+        \end{array}\right] \nonumber\\
+         & =\left\{ \left[\begin{array}{c}
+        p\\
+        x+\lambda p\\
+        0
+        \end{array}\right]:p\in\C\right\} ,\\
+        E_{2}\left[A-\lambda I,B\right]^{-1}D_{2}\left[\begin{array}{c}
+        x\\
+        y
+        \end{array}\right] & =E_{2}\left[A-\lambda I,B\right]^{-1}\left[\begin{array}{c}
+        0\\
+        y
+        \end{array}\right] \nonumber\\
+         & =\left\{ \left[\begin{array}{c}
+        p\\
+        0\\
+        y+\left(\lambda^{2}+2\right)p
+        \end{array}\right]:p\in\C\right\} .
+    \end{align}
+\end{frame}
+
+\begin{frame}{Ví dụ 2}
+    \begin{align}
+    \norm{E_{1}\left[A-\lambda I,B\right]^{-1}D_{1}} & =\frac{1}{1+\left|\lambda\right|},\\
+    \norm{E_{2}\left[A-\lambda I,B\right]^{-1}D_{2}} & =\frac{1}{1+\left|\lambda^{2}+2\right|}.
+    \end{align}
+\end{frame}
+
+\begin{frame}{Ví dụ 2}
+    \begin{align}
+        H\left[A-\lambda I,B\right]^{-1}D_{1}\left[\begin{array}{c}
+        x\\
+        y
+        \end{array}\right] & =\left[A-\lambda I,B\right]^{-1}\left[\begin{array}{c}
+        x\\
+        0
+        \end{array}\right] \nonumber\\
+         & =\left\{ \left[\begin{array}{c}
+        p\\
+        x+\lambda p\\
+        \lambda x+\left(\lambda^{2}+2\right)p
+        \end{array}\right]:p\in\C\right\} ,\\
+        H\left[A-\lambda I,B\right]^{-1}D_{2}\left[\begin{array}{c}
+        x\\
+        y
+        \end{array}\right] & =\left[A-\lambda I,B\right]^{-1}\left[\begin{array}{c}
+        0\\
+        y
+        \end{array}\right] \nonumber\\
+         & =\left\{ \left[\begin{array}{c}
+        p\\
+        \lambda p\\
+        y+\left(\lambda^{2}+2\right)p
+        \end{array}\right]:p\in\C\right\} .
+    \end{align}
+\end{frame}
+
+
+
+\begin{frame}{Ví dụ 2}
+\begin{itemize}
+    \item Chọn $p=0$ và $p=-\frac{x}{\lambda}$, $\forall\lambda\in\C$:
+    \begin{align}
+        d\left(0,H\left[A-\lambda I,B\right]^{-1}D_{1}\left[\begin{array}{c}
+        x\\
+        y
+        \end{array}\right]\right) & \le\min\left\{ \max\left\{ \left|x\right|,\left|\lambda x\right|\right\} ,\left|\frac{2x}{\lambda}\right|\right\} \le\sqrt{2}\left|x\right|.
+    \end{align}
+    
+    % \item 
+    \begin{align}
+        \implies\norm{H\left[A-\lambda I,B\right]^{-1}D_{1}}\le\sqrt{2}\quad\forall\lambda\in\C.
+    \end{align}
+    \item Dấu bằng với $\lambda=\sqrt{2}i$:
+    \begin{align}
+        \sup_{\lambda\in\C}\norm{H\left[A-\lambda I,B\right]^{-1}D_{1}}=\sqrt{2}.
+    \end{align}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ví dụ 2}
+\begin{itemize}
+    \item Tương tự, với $p=0$:
+    \begin{align}
+        d\left(0,H\left[A-\lambda I,B\right]^{-1}D_{2}\left[\begin{array}{c}
+        x\\
+        y
+        \end{array}\right]\right) & \le\left|y\right|,\\
+        \norm{H\left[A-\lambda I,B\right]^{-1}D_{2}\left[\begin{array}{c}
+        x\\
+        y
+        \end{array}\right]} & \le1\quad\forall\lambda\in\C.
+    \end{align}
+    \item Dấu bằng khi $\lambda=\sqrt{2}i$:
+    \begin{align}
+        \sup_{\lambda\in\C}\norm{H\left[A-\lambda I,B\right]^{-1}D_{2}}=1.
+    \end{align}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ví dụ 2}
+    \begin{itemize}
+        \item Ước lượng bán kính điều khiển
+        \begin{align}
+        \frac{1}{\sqrt{2}}=\frac{1}{\max\left\{ 1,\sqrt{2}\right\} }\le r_{\C}^{\MP}\left(A,B\right)\le\frac{1}{\max\left\{ \sup\frac{1}{1+\left|\lambda\right|},\sup\frac{1}{1+\left|\lambda^{2}+2\right|}\right\} }=1.
+        \end{align}
+    \end{itemize}
+\end{frame}

@@ -1,0 +1,144 @@
+% \begin{frame}{Slide nháp}
+% Nội dung cần nói
+% \begin{itemize}
+%     \item Định nghĩa của nhiễu affine, khái niệm ma trận cấu trúc
+%     \item Định nghĩa của bán kính điều khiển
+%     \item Đưa ra các theorem về công thức tính bán kính điều khiển
+%     \item Dẫn dắt để nói cho tất cả các trường hợp
+% \end{itemize}
+% {\large Ưu tiên đưa các theorem về công thức trước, sau đó đưa các định nghĩa và công thức liên quan vào, vì các bổ đề có thể chỉ dùng để chứng minh chứ không cần thiết cho nội dung định lý}
+% \end{frame}
+\subsection{Bán kính điều khiển}
+\begin{frame}{Định nghĩa}
+    Nhiễu có cấu trúc
+    \begin{equation}
+        \left[{A},{B}\right] \leadsto{}\left[\widetilde{A},\widetilde{B}\right]=\left[A,B\right]+D\Delta E
+    \end{equation}
+    Bán kính điều khiển
+    % Cho chuẩn $\norm{\cdot}$ trên $\K^{l\times q}$, một khoảng cách
+% cấu trúc để một cặp $\left(A,B\right)$ không điều khiển được dưới
+% nhiễu affine được định nghĩa bởi
+    \begin{equation}
+        r_{\K}^{D,E}\left(A,B\right)=\inf\left\{ \norm{\Delta}\colon\Delta\in\K^{l\times q},\left[\widetilde{A},\widetilde{B}\right]\text{ không điều khiển được}\right\} 
+    \end{equation}
+%     Nếu cặp $\left(A,B\right)$ điều khiển được dưới mọi loại nhiễu thì
+% $r_{\K}^{D,E}\left(A,B\right)=\infty$.
+%     Đại lượng $r_{\K}^{D,E}\left(A,B\right)$
+% được gọi là bán kính điều khiển được có cấu trúc của hệ $\dot{x}=Ax+Bu$.
+\end{frame}
+
+\begin{frame}{Định nghĩa}
+\begin{itemize}
+    \item Ánh xạ đơn trị
+    \begin{align}
+    W_{\lambda}\colon & \K^{m+n}\to\K^{n} \nonumber\\
+    W_{\lambda}\left(z\right) & =\left[\begin{array}{cc}
+    A-\lambda I & B\end{array}\right]z,\quad \lambda\in\C.
+    \end{align}
+    \item Ánh xạ đa trị 
+    \begin{align}
+    EW_{\lambda}^{-1}D\colon&\K^{l}\toto\K^{q} \nonumber\\
+    \left(EW_{\lambda}^{-1}D\right)\left(u\right)&=E\left(W_{\lambda}^{-1}\left(Du\right)\right).
+    \end{align}
+    \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Định lý}
+    Nếu $\mathbb{K}=\mathbb{C}$ thì:
+
+    \begin{align}
+    r_{\mathbb{C}}^{D,E}\left(A,B\right)=\frac{1}{\sup_{\lambda\in\mathbb{C}}\norm{EW_{\lambda}^{-1}D}}.\label{eq:3.3}
+    \end{align}
+\end{frame}
+
+\begin{frame}{Nghịch đảo Moore-penrose tổng quát}
+\begin{itemize}
+    \item Cho \(G\in\C^{n\times p}\), \(\rank_{\text{row}}(G)=n\), \(\F_{G}(z)=Gz\)
+\begin{equation}
+d\left(0,\mathcal{F}_{G}^{-1}\left(y\right)\right)=\norm{G^{\dagger}y},\quad\norm{\mathcal{F}_{G}^{-1}}=\norm{G^{\dagger}}.\label{eq:3.5}
+\end{equation}
+    \item Cho \(G\in\C^{n\times p}\), \(\F_{G}\left(z\right)=Gz\)
+\begin{equation}
+\F_{G}^{\dagger}\left(y\right)=\begin{cases}
+z\quad s.t.\quad Gz=y,\norm z=d\left(0,\F_{G}^{-1}\left(y\right)\right) & y\in\im\F_{G,}\\
+\emptyset & y\notin\im\F_{G}.
+\end{cases}\label{eq:3.6}
+\end{equation}
+\end{itemize}
+\end{frame}
+
+% \begin{frame}{Định nghĩa}
+%     Cho toán tử tuyến tính $\F_{G}\left(z\right)=Gz$
+% trong đó $G\in\C^{m\times p}$, nghịch đảo Moore-Penrose tổng quát
+% $\F_{G}^{\dagger}$ của $\F_{G}$ được định nghĩa bởi:
+
+% \end{frame}
+
+\subsection{Ví dụ}
+\input{parts/structured-distance-eg.tex}
+
+% \subsection{Một số trường hợp cụ thể}
+% \begin{frame}{}
+% \begin{itemize}
+%     \item Hệ
+%     \begin{equation}
+%         \left(A,B\right)\in\C^{n\times\left(n+m\right)}.
+%     \end{equation}
+%     \item Bán kính điều khiển
+%     \begin{equation}
+%         r_{\C}\left(A,B\right)=\frac{1}{\sup_{\lambda\in\C}\norm{W_{\lambda}^{\dagger}}}.
+%     \end{equation}
+% \end{itemize}    
+% \end{frame}
+
+% \begin{frame}{Giả thiết}
+%     Giả sử cặp điều khiển được $\left(A,B\right)$ chịu nhiễu có cấu trúc
+% theo công thức:
+% \begin{equation}
+% \left[A,B\right]\leadsto\left[A,B\right]+D\Delta E,\quad\Delta\in\C^{l\times q},\label{eq:3.7}
+% \end{equation}
+% trong đó $D\in\C^{n\times l}$,$E\in\C^{q\times\left(n+m\right)}.$
+% Do $W_{\lambda}W_{\lambda}^{\dagger}Du=Du,\forall u\in\C^{l},$ ta
+% có $W_{\lambda}^{\dagger}Du\in W_{\lambda}^{-1}\left(Du\right).$
+% Vì vậy $W_{\lambda}^{-1}\left(Du\right)=W_{\lambda}^{\dagger}Du+W_{\lambda}^{-1}\left(0\right)=W_{\lambda}^{\dagger}Du+\ker W_{\lambda}$
+% và dẫn đến:
+% \begin{equation}
+% \left(EW_{\lambda}^{-1}D\right)\left(u\right)=\left(EW_{\lambda}^{-1}\right)\left(Du\right)=EW_{\lambda}^{\dagger}Du+E\ker W_{\lambda}\label{eq:3.8}
+% \end{equation}
+% \end{frame}
+
+% \begin{frame}{Hệ quả}
+%     Giả sử $E^{*}E\ker W_{\lambda}\subset\ker W_{\lambda},\forall\lambda\in\C.$
+% Khoảng cách cấu trúc từ cặp điều khiển đươc $\left(A,B\right)$ tới
+% trạng thái không điều khiển được cùng với tổ hợp nhiễu có cấu trúc
+% của công thức \eqref{eq:3.7} cho bởi công thức sau:
+% \begin{equation}
+% r_{\C}^{D,E}\left(A,B\right)=\frac{1}{\sup_{\lambda\in\C}\norm{EW_{\lambda}^{\dagger}D}}\label{eq:3.9}
+% \end{equation}
+% trong đó $W_{\lambda}^{\dagger}=W_{\lambda}^{*}\left(W_{\lambda}W_{\lambda}^{*}\right)^{-1}$
+% đại diện nghịch đảo Moore-Penrose của $W_{\lambda}=\left[A-\lambda I,B\right].$
+% \end{frame}
+
+% \begin{frame}{Hệ quả}
+%     Giả sử cặp điều khiển được $\left(A,B\right)\in\C^{n\times n}\times\C^{n\times m}$
+% chịu nhiễu theo công thức \eqref{eq:3.7} trong đó $E\in\C^{q\times\left(m+n\right)}$
+% có hạng cột đầy đủ. Khi đó khoảng cách có cấu trúc từ $\left(A,B\right)$
+% tới trạng thái không điểu khiển được:
+% \begin{equation}
+% r_{\C}^{D,E}\left(A,B\right)=\frac{1}{\sup_{\lambda\in\C}\norm{\left(W_{\lambda}\left(E^{*}E\right)^{-1/2}\right)^{\dagger}D}}.\label{eq:3.10}
+% \end{equation}
+% \end{frame}
+
+% \begin{frame}{Hệ quả}
+%     Giả sử cặp điều khiền được $\left(A,B\right)\in\C^{n\times n}\times\C^{n\times m}$
+% chịu nhiễu theo công thức \eqref{eq:3.13} trong đó $E_{A}\in\C^{q_{1}\times n}$
+% có hạng cột đầy đủ và $\im B^{*}\subset\im E_{B}^{*}$. Khi đó:
+% \begin{equation}
+% r_{\C}^{D,E}\left(A,B\right)=\inf_{\lambda\in\C}\sigma_{\min}\left(\begin{bmatrix}E_{A}^{*\dagger}\left(A^{*}-\lambda I\right)\\
+% E_{B}^{*\dagger}B^{*}
+% \end{bmatrix},D^{*}\right),\label{eq:3.14}
+% \end{equation}
+% trong đó $E_{B}^{*\dagger}$ nghịch đảo tổng quát Moore-Penrose của $E_{B}^{*}$.
+% \end{frame}

@@ -1,0 +1,66 @@
+% \begin{frame}{Slide nháp}
+% Nội dung cần nói
+% \begin{itemize}
+%     \item Giới thiệu chung về các định nghĩa
+%     \item Hệ 
+%     \item Tính điều khiển được
+%     \item Bán kính điều khiển
+% \end{itemize}
+% {\large khả năng cao phần này sẽ gộp với phần 2, do cùng là giới thiệu các định nghĩa khái niệm}
+% \end{frame}
+\subsection{Giới thiệu}
+\begin{frame}{Hệ điều khiển được}
+    \begin{itemize}
+        \item Hệ điều khiển tuyến tính:
+        \begin{align}
+            \dot{x}=Ax+Bu,x\in\mathbb{K}^{n},A\in\mathbb{K}^{n\times n},B\in\mathbb{K}^{n\times m},
+        \end{align}
+        \item Hệ là điều khiển được
+        \begin{align}
+            \rank\left[A\mid B\right]=n,
+        \end{align}
+        Trong đó
+        \begin{equation}
+        \left[A\mid B\right]=\left[\begin{array}{cccc}
+        B & AB & \cdots & A^{n-1}B\end{array}\right].    
+        \end{equation}
+    \end{itemize}
+\end{frame}
+\begin{frame}{Bán kính điều khiển được}
+    \begin{itemize}
+        \item Chịu nhiễu
+        \begin{equation}
+            \left[A,B\right]\leadsto\left[\tilde{A},\tilde{B}\right]=\left[A,B\right]+\left[\Delta_{1},\Delta_{2}\right].
+        \end{equation}
+        \item Khoảng cách đến trạng thái không điều khiển được:
+        \begin{align}
+            r_{\mathbb{K}}\left(A,B\right)= & \inf\{\norm{\Delta_{1},\Delta_{2}}:\left[\Delta_{1},\Delta_{2}\right]\in\mathbb{K}^{n\times\left(n+m\right)} ,\nonumber \\
+             &\left[A,B\right]+\left[\Delta_{1},\Delta_{2}\right]\text{ là không điều khiển được\}}.
+        \end{align}
+        % \item Công thức Eising:
+        % \begin{align}
+        %     r_{\mathbb{C}}\left(A,B\right)=\inf_{\lambda\in\mathbb{C}}\sigma_{\min}\left(\left[A-\lambda IB\right]\right).
+        % \end{align}
+        % \item Điều kiện Hautus:
+        % \begin{align}
+        %     \left(A,B\right) & \in\mathbb{K}^{n\times n}\times\mathbb{K}^{n\times m}\text{ là điều khiển được} \nonumber\\
+        %      & \iff\rank\left[A-\lambda i,B\right]=n,\text{ }\forall\lambda\in\mathbb{C}
+        % \end{align}
+    \end{itemize}
+\end{frame}
+
+% \begin{frame}{Nhiễu của cặp ma trận}
+%     \begin{itemize}
+%         \item Cặp $\left(A,B\right)$ bị nhiễu affine
+%         \begin{align}
+%             \left[A,B\right]\rightsquigarrow\left[\tilde{A},\tilde{B}\right]=\left[A,B\right]+D\Delta E,\text{ }\Delta\in\mathcal{D},
+%         \end{align}
+%         với $D\in\mathbb{K}^{n\times l},E\in\mathbb{K}^{q\times\left(n+m\right)}$
+% là ma trận cấu trúc cho trước và $\mathcal{D}\subset\mathbb{K}^{l\times q}$ là
+% lớp nhiễu cho trước. 
+%         \item Ma trận $A$ và $B$ chịu nhiều nhiễu
+%         \begin{align}
+%             \left[A,B\right]\rightsquigarrow\left[\tilde{A},\tilde{B}\right]=\left[A,B\right]+\sum_{i=1}^{N}D_{i}\Delta_{i}E_{i}.0
+%         \end{align}
+%     \end{itemize}
+% \end{frame}

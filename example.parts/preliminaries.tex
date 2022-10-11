@@ -1,0 +1,67 @@
+\subsection{Ánh xạ đa trị}
+% \begin{frame}{Các khái niệm cần cover}
+%     Slide này để nháp, không trong nội dung cuối
+%     \begin{itemize}
+%         \item Ma trận adjoint
+%         \item Không gian đối ngẫu
+%         \item Không gian bù trực giao của một không gian
+%         \item Ánh xạ đa trị
+%         \item Toán tử đa trị tuyến tính
+%         \item chuẩn vector, chuẩn ánh xạ đa trị
+%         \item ker và dom của ánh xạ đa trị
+%     \end{itemize}
+% \end{frame}
+
+\begin{frame}{Một số định nghĩa và ký hiệu}
+    \begin{itemize}
+%         \item Không gian đối ngẫu
+%         \begin{equation}
+%             \left(\mathbb{K}^{n}\right)^{*}=\left\{ u^{*}\colon u\in\mathbb{K}^{n}\right\}
+%         \end{equation}
+%         \item Phần bù trực giao 
+%         \begin{equation}
+%             M^{\perp}=\left\{ u^{*}\in\mathbb{K}^{*}\colon u^{*}x=0\ \forall x\in M\right\} 
+%         \end{equation}
+%         \item Với $u^{*}\in\left(\mathbb{K}^{n}\right)^{*}$, $x\in\mathbb{K}^{n}$,
+% ký hiệu 
+%         \begin{equation}
+%             u^{*}\left(x\right)=u^{*}x
+%         \end{equation}
+        \item Ánh xạ đa trị \(\F\)
+        \begin{equation}
+            \F\colon\K^{n}\toto\K^{m}
+        \end{equation}
+        \item Đồ thị của \(\F\)
+        \begin{equation}
+            \gr\F=\left\{ \left(x,y\right)\in\K^{n}\times\K^{m}\colon y\in\F\left(x\right)\right\} 
+        \end{equation}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Một số định nghĩa và ký hiệu}
+    \begin{itemize}
+        \item Miền xác định của \(\F\)
+        \begin{equation}
+            \dom\F  =\left\{ x\in\K^{n}\colon\F\left(x\right)\ne\emptyset\right\}
+        \end{equation}
+        \item Nhân của \(\F\)
+        \begin{equation}
+            \ker\F  =\left\{ x\in\dom\F\colon0\in\F\left(x\right)\right\}
+        \end{equation}
+        \item Chuẩn của \(\F\)
+        \begin{equation}
+            \norm{\F}=\sup\left\{ \inf_{y\in\F\left(x\right)}\norm y\colon x\in\dom\F,\norm x=1\right\}
+        \end{equation}
+    \end{itemize}
+\end{frame}
+
+% \leqnomode
+% \begin{frame}{Một số tính chất}
+
+% \begin{align}
+%   & y\in\F\left(x\right)\iff\F\left(x\right)=y+\F\left(0\right)  \\
+%   & \vphantom{\frac11}\inf_{y\in\F\left(x\right)}\norm y\le\norm{\F}\norm x\quad\forall x\in\dom\F  \\
+%   & \vphantom{\frac11}\norm{\F\left(x\right)}\le\norm{\F}\norm x\quad\forall x\in\dom\F \quad\text{nếu \(\F\) đơn trị}
+% \end{align}
+% \end{frame}
+% \reqnomode
