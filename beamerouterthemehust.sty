@@ -11,6 +11,7 @@
 \newlength{\logoheight}
 \setlength{\logoheight}{0.15\paperheight}
 \pgfdeclareimage[height=\logoheight]{logo}{res/logo-169t.png}
+\pgfdeclareimage[height=\logoheight]{school-logo}{res/school-logo.png}
 \iflongslide
 	\newcommand{\titlepagetextwidth}{0.8\paperwidth}
 	\pgfdeclareimage[width=0.261\paperwidth]{logo}{./res/logo-169t.png}
@@ -103,7 +104,7 @@
 	\setlength{\titleareawidth}{\paperwidth - 0.5\titlepad}
 	\parbox[t][\titleareaheight]{\titleareawidth}{%
 		\begin{beamercolorbox}[wd=\titleareawidth]{none}
-			\pgfuseimage{logo}\hspace{2.25ex}\inserttitlegraphic
+			\pgfuseimage{logo}\hspace{2.25ex}\pgfuseimage{school-logo}
 		\end{beamercolorbox}
 		\vfill
 		\begin{beamercolorbox}[wd=\titleareawidth]{title}
