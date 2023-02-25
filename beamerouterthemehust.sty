@@ -50,7 +50,7 @@
 		\begin{beamercolorbox}[wd=\paperwidth]{none}
 			\begin{beamercolorbox}[left,leftskip=\ls,wd=0.9\paperwidth,ht=2.25ex,dp=1ex]{frametitle}%
 				\ifx\insertframetitle\empty\else
-					\uppercase\expandafter{\insertframetitle }%
+					\insertframetitle
 				\fi
 			\end{beamercolorbox}%
 			\begin{beamercolorbox}[center,wd=0.1\paperwidth,ht=2.25ex,dp=1ex]{page number in head/foot}%
@@ -63,7 +63,7 @@
 			\end{beamercolorbox}%
 		\else
 			\begin{beamercolorbox}[left,wd=\paperwidth,ht=2.25ex,dp=1ex,leftskip=\ls]{framesubtitle}%
-				\uppercase\expandafter{\insertframesubtitle }
+				\insertframesubtitle
 			\end{beamercolorbox}%
 		\fi
 		\ifx\insertframetitle\empty
